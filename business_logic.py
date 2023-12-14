@@ -1,5 +1,8 @@
 import cv2
 import tkinter as tk
+import face_recognition
+import os
+import json
 
 cap = None
 show_message_on_video = False  # Flag to control message display
@@ -13,9 +16,49 @@ def start_video(gui):
         show_frame(gui)
 
 def capture_frame(gui):
-    # Implement the capture functionality
-    pass
+    global cap
+    if cap:
+        ret, frame = cap.read()
+        if ret:
+            # Save the captured frame temporarily
+            temp_photo_path = "temp_captured_photo.jpg"
+            cv2.imwrite(temp_photo_path, frame)
 
+            # Perform facial recognition
+            employee_name = recognize_employee(temp_photo_path)
+            if employee_name:
+                gui.show_message(f"Hello {employee_name}")
+            else:
+                gui.show_message("No match or unable to read face")
+def recognize_employee(captured_photo_path):
+    # Load employee data from Filestr.json
+    with open('Filestr.json', 'r') as file:
+        employees = json.load(file)
+
+    # Load the captured image
+    captured_image = face_recognition.load_image_file(captured_photo_path)
+    captured_face_encoding = face_recognition.face_encodings(captured_image)
+
+    if captured_face_encoding:
+        captured_face_encoding = captured_face_encoding[0]
+    else:
+        return None  # No face detected in the captured image
+
+    # Iterate through each employee and compare faces
+    for employee in employees:
+        for photo_path in employee["photos"]:
+            # Construct the full path for employee photos
+            full_photo_path = os.path.join('current', photo_path)
+            for filename in os.listdir(full_photo_path):
+                employee_image = face_recognition.load_image_file(os.path.join(full_photo_path, filename))
+                employee_face_encoding = face_recognition.face_encodings(employee_image)[0]
+
+                # Compare faces
+                results = face_recognition.compare_faces([employee_face_encoding], captured_face_encoding)
+                if results[0]:
+                    return f"{employee['name']} {employee['surname']}"
+
+    return None  # No match found
 def go_back(gui):
     global cap
     if cap is not None:
