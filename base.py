@@ -1,6 +1,7 @@
+#Base SECTION 1
 import gui
 import business_logic
-
+#Base SECTION 2
 def auto_start_and_back(app):
     # Show message
     app.show_message("Getting Video Ready")
@@ -17,10 +18,10 @@ def auto_start_and_back(app):
 
     # Schedule to hide the message and go back after a delay
     app.root.after(5000, lambda: [hide_message(), business_logic.go_back(app)])
-
+#Base SECTION 3
 def hide_message():
     business_logic.show_message_on_video = False
-
+#Base SECTION 4
 if __name__ == "__main__":
     app = gui.Application()
     app.set_video_start_callback(lambda: business_logic.start_video(app))
