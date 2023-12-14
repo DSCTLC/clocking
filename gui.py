@@ -1,6 +1,7 @@
 import tkinter as tk
 from PIL import Image, ImageTk
 import cv2  # Make sure to import cv2
+from business_logic import capture_frame
 
 class Application:
     def __init__(self):
@@ -26,12 +27,16 @@ class Application:
         self.start_button = tk.Button(button_container, text="Start Video", command=lambda: self.start_video())
         self.start_button.pack(side=tk.LEFT)
 
-        self.capture_button = tk.Button(button_container, text="Capture Frame", state=tk.DISABLED, command=lambda: self.capture_frame())
+        self.capture_button = tk.Button(button_container, text="Capture Frame", command=self.capture_frame)
         self.capture_button.pack(side=tk.LEFT)
 
         self.back_button = tk.Button(button_container, text="Go Back", state=tk.DISABLED, command=lambda: self.go_back())
         self.back_button.pack(side=tk.LEFT)
 
+    def capture_frame(self):
+        # Call the capture frame function from business_logic.py
+        capture_frame(self)
+        self.show_message("Capturing frame...")
     def set_video_start_callback(self, callback):
         self.start_video = callback
 
