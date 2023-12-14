@@ -1,8 +1,10 @@
+# Gui Secion 1
 import tkinter as tk
 from PIL import Image, ImageTk
 import cv2  # Make sure to import cv2
 from business_logic import capture_frame
 
+# Gui Secion 2
 class Application:
     def __init__(self):
         self.root = tk.Tk()
@@ -20,6 +22,7 @@ class Application:
         self.message_label = tk.Label(self.video_label, text="", bg='grey', fg='white', font=("Helvetica", 16))
         self.message_label.place(relx=0.5, rely=0.5, anchor='center')
 
+    # Gui Secion 3
     def setup_buttons(self):
         button_container = tk.Frame(self.root)
         button_container.pack()
@@ -33,17 +36,22 @@ class Application:
         self.back_button = tk.Button(button_container, text="Go Back", state=tk.DISABLED, command=lambda: self.go_back())
         self.back_button.pack(side=tk.LEFT)
 
+    # Gui Secion 4
     def capture_frame(self):
         # Call the capture frame function from business_logic.py
         capture_frame(self)
         self.show_message("Capturing frame...")
+
+    # Gui Secion 5
     def set_video_start_callback(self, callback):
         self.start_video = callback
 
+    # Gui Secion 6
     def show_message(self, message):
         self.message_label.config(text=message)
         self.message_label.place(relx=0.5, rely=0.5, anchor='center')
 
+    # Gui Secion 7
     def hide_message(self):
         self.message_label.place_forget()
     def set_capture_frame_callback(self, callback):
@@ -52,6 +60,7 @@ class Application:
     def set_go_back_callback(self, callback):
         self.go_back = callback
 
+    # Gui Secion 8
     def update_frame(self, frame):
         # Convert the frame to a format suitable for Tkinter and display it
         cv2image = cv2.cvtColor(frame, cv2.COLOR_BGR2RGBA)
@@ -60,6 +69,7 @@ class Application:
         self.video_label.imgtk = imgtk
         self.video_label.configure(image=imgtk)
 
+    # Gui Secion 9
     def reset_gui(self):
         self.start_button.config(state=tk.NORMAL)
         self.capture_button.config(state=tk.DISABLED)
