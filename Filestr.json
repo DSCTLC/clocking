@@ -1,0 +1,101 @@
+[
+    {
+        "name": "Clio",
+        "surname": "Glenister",
+        "pin": "1234",
+        "role": "Pharmacist",
+        "photos": [
+            "employees/Clio_Glenister/"
+        ]
+    },
+    {
+        "name": "Duane",
+        "surname": "Cronje",
+        "pin": "1234",
+        "role": "Pharmacist",
+        "photos": [
+            "employees/Duane_Cronje/"
+        ]
+    },
+    {
+        "name": "qwer",
+        "surname": "qwee",
+        "pin": "qwert",
+        "role": "Pharmacist",
+        "photos": [
+            "employees/qwer_qwee/"
+        ]
+    },
+    {
+        "name": "qqq",
+        "surname": "qqq",
+        "pin": "qqq",
+        "role": "Stock",
+        "photos": [
+            "employees/qqq_qqq/"
+        ]
+    },
+    {
+        "Name": "eeeee",
+        "Surname": "eeee",
+        "PIN": "eeee",
+        "Role": "Stock",
+        "photos": [
+            "employees/eeeee_eeee/"
+        ]
+    },
+    {
+        "Name": "eee",
+        "Surname": "eee",
+        "PIN": "1234",
+        "Role": "Cashier",
+        "photos": [
+            "employees/eee_eee/"
+        ]
+    },
+    {
+        "Name": "jjj",
+        "Surname": "jjj",
+        "PIN": "jjj",
+        "Role": "Stock",
+        "photos": [
+            "employees/jjj_jjj/"
+        ]
+    },
+    {
+        "Name": "cccc",
+        "Surname": "cccc",
+        "PIN": "cccc",
+        "Role": "Stock",
+        "photos": [
+            "employees/cccc_cccc/"
+        ]
+    },
+    {
+        "Name": "qqqq",
+        "Surname": "qqqq",
+        "PIN": "qqqq",
+        "Role": "Cashier",
+        "photos": [
+            "employees/qqqq_qqqq/"
+        ]
+    },
+    {
+        "Name": "qqq",
+        "Surname": "qqqw",
+        "PIN": "qqqq",
+        "Role": "Cashier",
+        "photos": [
+            "employees/qqq_qqqw/"
+        ]
+    },
+    {
+        "Name": "gdg",
+        "Surname": "dgd",
+        "PIN": "dgdg",
+        "Role": "Cashier",
+        "photos": [
+            "employees/gdg_dgd/"
+        ]
+    }
+]
