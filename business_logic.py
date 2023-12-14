@@ -1,3 +1,4 @@
+# BUS Secion 1
 import cv2
 import tkinter as tk
 import face_recognition
@@ -6,7 +7,7 @@ import json
 
 cap = None
 show_message_on_video = False  # Flag to control message display
-
+# BUS Secion 2
 def start_video(gui):
     global cap
     if cap is None:
@@ -14,7 +15,7 @@ def start_video(gui):
         gui.capture_button.config(state=tk.NORMAL)
         gui.back_button.config(state=tk.NORMAL)
         show_frame(gui)
-
+# BUS Secion 3
 def capture_frame(gui):
     global cap
     if cap:
@@ -30,6 +31,9 @@ def capture_frame(gui):
                 gui.show_message(f"Hello {employee_name}")
             else:
                 gui.show_message("No match or unable to read face")
+                
+# BUS Secion 4
+
 def recognize_employee(captured_photo_path):
     # Load employee data from Filestr.json
     with open('Filestr.json', 'r') as file:
@@ -59,6 +63,7 @@ def recognize_employee(captured_photo_path):
                     return f"{employee['name']} {employee['surname']}"
 
     return None  # No match found
+# BUS Secion 4
 def go_back(gui):
     global cap
     if cap is not None:
@@ -67,6 +72,7 @@ def go_back(gui):
 
     # Reset the GUI elements
     reset_gui(gui)
+# BUS Secion 5
 
 def show_frame(gui):
     global cap, show_message_on_video
@@ -93,7 +99,7 @@ def show_frame(gui):
 
             gui.update_frame(frame)
         gui.root.after(10, lambda: show_frame(gui))
-
+# BUS Secion 6
 def reset_gui(gui):
     # Reset the GUI to its initial state
     gui.start_button.config(state=tk.NORMAL)
@@ -102,6 +108,7 @@ def reset_gui(gui):
     gui.video_label.imgtk = None
     gui.video_label.configure(image='')  # Remove the current image
 
+# BUS Secion 7
 def release_resources():
     global cap
     if cap is not None:
