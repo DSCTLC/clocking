@@ -7,6 +7,8 @@ import json
 
 cap = None
 show_message_on_video = False  # Flag to control message display
+
+
 # BUS Secion 2
 def start_video(gui):
     global cap
@@ -15,8 +17,11 @@ def start_video(gui):
         gui.capture_button.config(state=tk.NORMAL)
         gui.back_button.config(state=tk.NORMAL)
         show_frame(gui)
+
+
 # BUS Secion 3
 def capture_frame(gui):
+    print("Business logic capture_frame called")  # Debugging lin
     global cap
     if cap:
         ret, frame = cap.read()
@@ -31,7 +36,9 @@ def capture_frame(gui):
                 gui.show_message(f"Hello {employee_name}")
             else:
                 gui.show_message("No match or unable to read face")
-                
+
+
+
 # BUS Secion 4
 
 def recognize_employee(captured_photo_path):
@@ -43,26 +50,34 @@ def recognize_employee(captured_photo_path):
     captured_image = face_recognition.load_image_file(captured_photo_path)
     captured_face_encoding = face_recognition.face_encodings(captured_image)
 
-    if captured_face_encoding:
-        captured_face_encoding = captured_face_encoding[0]
-    else:
+    if not captured_face_encoding:
         return None  # No face detected in the captured image
+
+    captured_face_encoding = captured_face_encoding[0]
 
     # Iterate through each employee and compare faces
     for employee in employees:
-        for photo_path in employee["photos"]:
+        for photo_dir in employee["photos"]:
             # Construct the full path for employee photos
-            full_photo_path = os.path.join('current', photo_path)
-            for filename in os.listdir(full_photo_path):
-                employee_image = face_recognition.load_image_file(os.path.join(full_photo_path, filename))
-                employee_face_encoding = face_recognition.face_encodings(employee_image)[0]
+            full_photo_path = os.path.join('current', photo_dir)
+            if os.path.isdir(full_photo_path):
+                for filename in os.listdir(full_photo_path):
+                    file_path = os.path.join(full_photo_path, filename)
+                    if os.path.isfile(file_path):
+                        employee_image = face_recognition.load_image_file(file_path)
+                        employee_face_encodings = face_recognition.face_encodings(employee_image)
+                        if employee_face_encodings:
+                            employee_face_encoding = employee_face_encodings[0]
 
-                # Compare faces
-                results = face_recognition.compare_faces([employee_face_encoding], captured_face_encoding)
-                if results[0]:
-                    return f"{employee['name']} {employee['surname']}"
+                            # Compare faces
+                            results = face_recognition.compare_faces([employee_face_encoding], captured_face_encoding)
+                            if results[0]:
+                                return f"{employee['name']} {employee['surname']}"
 
     return None  # No match found
+
+
+
 # BUS Secion 4
 def go_back(gui):
     global cap
@@ -72,6 +87,8 @@ def go_back(gui):
 
     # Reset the GUI elements
     reset_gui(gui)
+
+
 # BUS Secion 5
 
 def show_frame(gui):
@@ -99,6 +116,8 @@ def show_frame(gui):
 
             gui.update_frame(frame)
         gui.root.after(10, lambda: show_frame(gui))
+
+
 # BUS Secion 6
 def reset_gui(gui):
     # Reset the GUI to its initial state
@@ -107,6 +126,7 @@ def reset_gui(gui):
     gui.back_button.config(state=tk.DISABLED)
     gui.video_label.imgtk = None
     gui.video_label.configure(image='')  # Remove the current image
+
 
 # BUS Secion 7
 def release_resources():

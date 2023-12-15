@@ -2,7 +2,7 @@
 import tkinter as tk
 from PIL import Image, ImageTk
 import cv2  # Make sure to import cv2
-from business_logic import capture_frame
+import business_logic
 
 # Gui Secion 2
 class Application:
@@ -30,7 +30,8 @@ class Application:
         self.start_button = tk.Button(button_container, text="Start Video", command=lambda: self.start_video())
         self.start_button.pack(side=tk.LEFT)
 
-        self.capture_button = tk.Button(button_container, text="Capture Frame", command=self.capture_frame)
+        # Update the Capture Frame button to call the capture_frame function in business_logic.py
+        self.capture_button = tk.Button(button_container, text="Capture Frame", command=lambda: business_logic.capture_frame(self))
         self.capture_button.pack(side=tk.LEFT)
 
         self.back_button = tk.Button(button_container, text="Go Back", state=tk.DISABLED, command=lambda: self.go_back())
@@ -38,8 +39,7 @@ class Application:
 
     # Gui Secion 4
     def capture_frame(self):
-        # Call the capture frame function from business_logic.py
-        capture_frame(self)
+        print("GUI capture_frame method called")
         self.show_message("Capturing frame...")
 
     # Gui Secion 5
