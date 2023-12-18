@@ -11,7 +11,7 @@ def auto_start_and_back(app):
     app.root.after(100, lambda: business_logic.start_video(app))  # 100 ms delay
 
     # Schedule to hide the message and go back after a delay
-    app.root.after(5100, lambda: [app.hide_message(), business_logic.go_back(app)])  # Adjusted delay
+    app.root.after(10000, lambda: [app.hide_message(), business_logic.go_back(app)])  # Adjusted delay
     # Set the flag to show the message
     business_logic.show_message_on_video = True
     business_logic.start_video(app)

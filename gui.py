@@ -26,6 +26,8 @@ class Application:
     def setup_buttons(self):
         button_container = tk.Frame(self.root)
         button_container.pack()
+        self.capture_button = tk.Button(button_container, text="Capture Frame",
+                                        command=lambda: business_logic.capture_frame(self))
 
         self.start_button = tk.Button(button_container, text="Start Video", command=lambda: self.start_video())
         self.start_button.pack(side=tk.LEFT)

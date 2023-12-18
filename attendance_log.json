@@ -1,0 +1,163 @@
+[
+    {
+        "employee": "Duane Cronje",
+        "status": "out",
+        "timestamp": "2023-12-18T01:31:37.534944",
+        "type": "manual",
+        "photo": "manual_login_photos\\Duane Cronje_20231218_013137.jpg"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "out",
+        "timestamp": "2023-12-18T02:29:11.918088",
+        "type": "manual",
+        "photo": "manual_login_photos\\Duane Cronje_20231218_022911.jpg"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "in",
+        "timestamp": "2023-12-18T02:29:49.112287",
+        "type": "manual",
+        "photo": "manual_login_photos\\Duane Cronje_20231218_022949.jpg"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "out",
+        "timestamp": "2023-12-18T02:30:12.746776",
+        "type": "manual",
+        "photo": "manual_login_photos\\Duane Cronje_20231218_023012.jpg"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "in",
+        "timestamp": "20231218 @ 07:30",
+        "type": "backdated",
+        "login_type": "manual"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "out",
+        "timestamp": "20231218 @ 06:15",
+        "type": "backdated",
+        "login_type": "manual"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "in",
+        "timestamp": "2023-12-18T02:45:41.218346",
+        "type": "manual",
+        "photo": "manual_login_photos\\Duane Cronje_20231218_024541.jpg"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "out",
+        "timestamp": "20231218 @ 06:45",
+        "type": "backdated",
+        "login_type": "manual"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "in",
+        "timestamp": "20231218 @ 07:00",
+        "type": "backdated",
+        "login_type": "manual"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "out",
+        "timestamp": "2023-12-18T02:51:39.855533",
+        "type": "manual",
+        "photo": "manual_login_photos\\Duane Cronje_20231218_025139.jpg"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "in",
+        "timestamp": "20231218 @ 05:30",
+        "type": "backdated",
+        "login_type": "manual"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "out",
+        "timestamp": "20231218 @ 08:45",
+        "type": "backdated",
+        "login_type": "manual"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "in",
+        "timestamp": "20231218 @ 06:45",
+        "type": "backdated",
+        "login_type": "manual"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "out",
+        "timestamp": "20231218 @ 05:00",
+        "type": "backdated",
+        "login_type": "manual"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "in",
+        "timestamp": "2023-12-18T03:33:35.734621",
+        "type": "facial",
+        "photo": "N/A"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "out",
+        "timestamp": "2023-12-18T03:34:33.195261",
+        "type": "facial",
+        "photo": "N/A"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "in",
+        "timestamp": "2023-12-18T03:34:54.817793",
+        "type": "facial",
+        "photo": "N/A"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "out",
+        "timestamp": "2023-12-18T03:35:17.612303",
+        "type": "facial",
+        "photo": "N/A"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "in",
+        "timestamp": "2023-12-18T03:35:29.138094",
+        "type": "facial",
+        "photo": "N/A"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "out",
+        "timestamp": "2023-12-18T03:36:02.252832",
+        "type": "manual",
+        "photo": "manual_login_photos\\Duane Cronje_20231218_033602.jpg"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "in",
+        "timestamp": "2023-12-18T03:42:05.776331",
+        "type": "facial",
+        "photo": "N/A"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "out",
+        "timestamp": "2023-12-18T03:42:37.558158",
+        "type": "manual",
+        "photo": "manual_login_photos\\Duane Cronje_20231218_034237.jpg"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "in",
+        "timestamp": "20231218 @ 07:15",
+        "type": "backdated",
+        "login_type": "facial"
+    }
+]

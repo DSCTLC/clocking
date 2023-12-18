@@ -1,0 +1,4 @@
+Pharmacist
+Stock
+Cashier
+Other
