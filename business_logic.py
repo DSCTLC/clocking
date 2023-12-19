@@ -5,6 +5,7 @@ import face_recognition
 import os
 import json
 import shutil
+from tkinter import Toplevel, Label, Button
 from tkinter import messagebox
 from datetime import datetime, timedelta
 
@@ -23,43 +24,74 @@ def start_video(gui):
         gui.back_button.config(state=tk.NORMAL)# Disable the start button
         show_frame(gui)
 
-def custom_confirm_dialog(employee_name, last_status, last_action, gui, login_type):
-    dialog = tk.Toplevel(gui.root)
+def custom_confirm_dialog(employee_name, last_status, formatted_last_action, gui, login_type, current_time):
+    dialog = Toplevel(gui.root)
     dialog.title("Confirm Action")
 
-    # Format the message
-    action_msg = f"Your last action: Logged {'out' if last_status == 'in' else 'in'} at {last_action}"
-    question_msg = f"Do you want to log {'in' if last_status == 'out' else 'out'}?"
+    # Determine the action message based on the last status
+    action_msg = f"Your last action: Logged {'out' if last_status == 'out' else 'in'} at {formatted_last_action}"
+    question_msg = f"Do you want to log {'out' if last_status == 'in' else 'in'}?"
 
     # Display the message
-    tk.Label(dialog, text=action_msg).pack(pady=(10, 0))
-    tk.Label(dialog, text=question_msg, font=("Helvetica", 14, "bold")).pack(pady=(5, 20))
+    Label(dialog, text=action_msg).pack(pady=(10, 0))
+    Label(dialog, text=question_msg, font=("Helvetica", 14, "bold")).pack(pady=(5, 20))
 
-    # Add Yes and No buttons
-    tk.Button(dialog, text="Yes", command=lambda: confirm_action(dialog, employee_name, last_status, gui, login_type, True)).pack(side=tk.LEFT, padx=20)
-    tk.Button(dialog, text="No", command=lambda: confirm_action(dialog, employee_name, last_status, gui, login_type, False)).pack(side=tk.RIGHT, padx=20)
+    # Create and pack the "Yes" button
+    yes_button = Button(dialog, text="Yes", command=lambda: confirm_action(dialog, employee_name, last_status, gui, login_type, True, current_time))
+    yes_button.pack(fill='x', expand=True, padx=20, pady=5)
+
+    # Create and pack the "Correct Previous Non Action" button
+    correct_button = Button(dialog, text="Correct Previous Non Action", command=lambda: confirm_action(dialog, employee_name, last_status, gui, login_type, False, current_time))
+    correct_button.pack(fill='x', expand=True, padx=20, pady=5)
+
+    # Bind the window close ('X' button) event to the on_dialog_close function
+    dialog.protocol("WM_DELETE_WINDOW", lambda: on_dialog_close(gui, dialog))
 
     dialog.transient(gui.root)  # Set to be on top of the main window
     dialog.grab_set()  # Ensure all input goes to this dialog
     dialog.wait_window()  # Wait here until the dialog is closed
 
-def confirm_action(dialog, employee_name, last_status, gui, login_type, user_response):
+def on_dialog_close(gui, dialog):
+    """
+    Handle the dialog close event.
+    """
+    dialog.destroy()
+    go_back(gui)
+
+def confirm_action(dialog, employee_name, last_status, gui, login_type, user_response, current_time):
     dialog.destroy()
     if user_response:
         # User agrees to log in/out
-        process_attendance(employee_name, gui, login_type)
+        new_status = "in" if last_status == "out" else "out"
+        data = read_attendance_data()  # Read the attendance data
+        data_record = {
+            "employee": employee_name,
+            "status": new_status,
+            "timestamp": current_time,
+            "type": login_type,
+            "photo": None  # Replace with actual photo path if available
+        }
+        data[employee_name] = {"status": new_status, "last_clock": current_time}
+        write_attendance_data(data)
+        append_to_attendance_log(data_record)
+        if login_type == "manual":
+            messagebox.showinfo("Manual Login", f"Manual login successful for {employee_name}")
+
+        # Update GUI to 'back' state and stop the video
+        go_back(gui)
+
     else:
         # User chooses to backdate
-        backdate_action(employee_name, last_status, gui, login_type)
+        data = read_attendance_data()  # Read the attendance data
+        last_action = data.get(employee_name, {}).get("last_clock", "No previous record")
+        backdate_action(employee_name, last_status, last_action, gui, login_type, current_time)
 
-
-# BUS Section 3
 def capture_frame(gui, attempt=1):
     global cap
     if cap:
         gui.start_button.config(state=tk.DISABLED)  # Disable the start button
         gui.capture_button.config(state=tk.DISABLED)
-        gui.back_button.config(state=tk.NORMAL)# Disable the capture button
+        gui.back_button.config(state=tk.NORMAL)  # Disable the capture button
 
         ret, frame = cap.read()
         if ret:
@@ -68,17 +100,28 @@ def capture_frame(gui, attempt=1):
 
             employee_name = recognize_employee(temp_photo_path)
             if employee_name:
-                messagebox.showinfo("Recognition Result", f"Hello {employee_name}")
-                process_attendance(employee_name, gui, "facial")
-            else:
-                if attempt < 2:
-                    gui.root.after(1000, lambda: capture_frame(gui, attempt + 1))
+                # Ask if the recognized employee is correct
+                response = messagebox.askyesno("Recognition Result", f"Hello {employee_name}. Is this you?")
+                if response:
+                    # If the user confirms, process attendance
+                    process_attendance(employee_name, gui, "facial")
                 else:
-                    response = messagebox.askyesno("Manual Login", "Do you want to log in manually? This will be recorded.")
+                    # If the user says it's not them, offer manual login
+                    response = messagebox.askyesno("Manual Login", "Do you want to log in manually?")
                     if response:
                         manual_login(gui, temp_photo_path)
                     else:
+                        # Return to the original state
                         go_back(gui)
+            else:
+                # If no employee is recognized
+                response = messagebox.askyesno("Recognition Result", "Not recognized. Do you want to log in manually?")
+                if response:
+                    manual_login(gui, temp_photo_path)
+                else:
+                    # Return to the original state
+                    go_back(gui)
+
 
 def read_attendance_data():
     try:
@@ -121,14 +164,12 @@ def process_attendance(employee_name, gui, login_type, photo_path=None):
         formatted_last_action = last_action
 
     # Call the custom confirm dialog
-    custom_confirm_dialog(employee_name, last_status, formatted_last_action, gui, login_type)
+    custom_confirm_dialog(employee_name, last_status, formatted_last_action, gui, login_type, current_time)
 
 def backdate_logout(employee_name, last_action, data):
     # Logic to backdate the logout
     backdated_time = last_action  # Modify as needed
     data[employee_name] = {"status": "out", "last_clock": backdated_time, "type": "backdated"}
-
-
 
 def backdate_action(employee_name, current_status, last_action, gui, login_type, current_time):
     backdate_window = tk.Toplevel(gui.root)
@@ -148,7 +189,13 @@ def backdate_action(employee_name, current_status, last_action, gui, login_type,
         # Handle invalid format or 'No previous record'
         last_action_time = datetime.now()
 
-    time_options = generate_time_options(last_action_time)
+    time_options = generate_time_options(employee_name)
+
+    # Check if time options are available
+    if not time_options:
+        messagebox.showerror("Error", "No valid backdate times available.")
+        backdate_window.destroy()
+        return
 
     # Time dropdown
     selected_time = tk.StringVar(backdate_window)
@@ -159,53 +206,96 @@ def backdate_action(employee_name, current_status, last_action, gui, login_type,
     submit_button = tk.Button(backdate_window, text="Submit", command=lambda: submit_backdate(employee_name, current_status, selected_time.get(), backdate_window, gui, login_type))
     submit_button.pack()
 
-def generate_time_options(last_action_time):
-    time_options = []
-    start_time = last_action_time + timedelta(minutes=15 - (last_action_time.minute % 15))
-    end_of_day = last_action_time.replace(hour=23, minute=59, second=59)
+def generate_time_options(employee_name):
+    # Read the current attendance data
+    data = read_attendance_data()
+    last_action_info = data.get(employee_name, {"last_clock": "No previous record"})
+    last_action_str = last_action_info.get("last_clock")
 
-    while start_time <= end_of_day:
-        formatted_time = start_time.strftime("%Y%m%d @ %H:%M")
+    # Try parsing the last action time in different formats
+    last_action_time = None
+    datetime_formats = ["%Y-%m-%dT%H:%M:%S.%f", "%Y-%m-%dT%H:%M:%S", "%Y%m%d @ %H:%M"]
+    for fmt in datetime_formats:
+        try:
+            last_action_time = datetime.strptime(last_action_str, fmt)
+            break
+        except (ValueError, TypeError):
+            continue
+
+    # Use current time if parsing fails
+    if not last_action_time:
+        print("Invalid last action time format or no previous record. Using current time instead.")
+        last_action_time = datetime.now()
+
+    # Generate time options starting from the next 15-minute mark after the last action
+    time_options = []
+    current_time = datetime.now()
+    start_time = last_action_time + timedelta(minutes=15 - (last_action_time.minute % 15))
+
+    # Ensure start_time is not in the future
+    if start_time > current_time:
+        start_time = current_time - timedelta(minutes=current_time.minute % 15)
+
+    # Generate time options up to the current time
+    while start_time <= current_time:
+        formatted_time = start_time.strftime("%Y-%m-%d @ %H:%M")
         time_options.append(formatted_time)
         start_time += timedelta(minutes=15)
+
     return time_options
 
 def submit_backdate(employee_name, current_status, datetime_str, backdate_window, gui, login_type):
-    # Check if a time has been selected
     if not datetime_str:
         messagebox.showerror("Backdate Error", "No time selected. Please select a time.")
         return
 
-    # Read the current attendance data
-    data = read_attendance_data()
+    # Attempt to convert the selected time to ISO format
+    try:
+        backdated_time = datetime.strptime(datetime_str, "%Y-%m-%d @ %H:%M").isoformat(timespec='microseconds')
+    except ValueError as e:
+        messagebox.showerror("Error", f"Invalid time format: {e}")
+        print(f"Error parsing time: {datetime_str}. Exception: {e}")
+        return
 
-    # Determine the new status based on the current status
-    new_status = "out" if current_status == "in" else "in"
+    # Determine the backdated and current statuses
+    backdated_status = "out" if current_status == "in" else "in"
+    new_current_status = "in" if backdated_status == "out" else "out"
 
     # Create a record for the backdated action
     backdate_record = {
         "employee": employee_name,
-        "status": new_status,
-        "timestamp": datetime_str,
+        "status": backdated_status,
+        "timestamp": backdated_time,
         "type": "backdated",
         "login_type": login_type
     }
 
-    # Update the main attendance data with the new status and timestamp
-    data[employee_name] = {"status": new_status, "last_clock": datetime_str}
-
-    # Write the updated data back to the attendance file
-    write_attendance_data(data)
-
     # Append the backdated record to the attendance log
     append_to_attendance_log(backdate_record)
 
-    # Inform the user of the successful backdate
-    messagebox.showinfo("Backdate", f"Backdated {employee_name}'s status to {new_status} at {datetime_str}")
+    # Update the main attendance data with the new current status and timestamp
+    current_time = datetime.now().isoformat(timespec='microseconds')
+    data = read_attendance_data()
+    data[employee_name] = {"status": new_current_status, "last_clock": current_time}
+    write_attendance_data(data)
 
-    # Close the backdate window and return to the main screen
+    # Create a record for the current action
+    current_record = {
+        "employee": employee_name,
+        "status": new_current_status,
+        "timestamp": current_time,
+        "type": "current",
+        "login_type": login_type
+    }
+
+    # Append the current record to the attendance log
+    append_to_attendance_log(current_record)
+
+    messagebox.showinfo("Backdate", f"Backdated {employee_name}'s status to {backdated_status} at {datetime_str}")
+
     backdate_window.destroy()
     go_back(gui)
+
 
 def preprocess_and_store_encodings():
     global employee_encodings

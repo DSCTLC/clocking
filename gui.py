@@ -8,7 +8,15 @@ import business_logic
 class Application:
     def __init__(self):
         self.root = tk.Tk()
-        self.root.geometry('640x580')
+        self.root.geometry('640x580')  # Set the initial size of the window
+
+        # Calculate position x and y coordinates
+        screen_width = self.root.winfo_screenwidth()
+        screen_height = self.root.winfo_screenheight()
+        x = (screen_width / 2) - (640 / 2)
+        y = (screen_height / 2) - (580 / 2)
+        self.root.geometry('+%d+%d' % (x, y))  # Set the position of the window
+
         self.video_label = tk.Label(self.root, bg='grey')
         self.video_label.pack(fill=tk.BOTH, expand=True)
 

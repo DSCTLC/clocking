@@ -159,5 +159,684 @@
         "timestamp": "20231218 @ 07:15",
         "type": "backdated",
         "login_type": "facial"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "out",
+        "timestamp": "20231218 @ 08:45",
+        "type": "backdated",
+        "login_type": "manual"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "in",
+        "timestamp": "20231218 @ 08:30",
+        "type": "backdated",
+        "login_type": "manual"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "out",
+        "timestamp": "20231218 @ 10:15",
+        "type": "backdated",
+        "login_type": "manual"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "in",
+        "timestamp": "2023-12-18T06:18:14.450753",
+        "type": "facial",
+        "photo": null
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "out",
+        "timestamp": "2023-12-18T06:18:37.158332",
+        "type": "facial",
+        "photo": null
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "in",
+        "timestamp": "2023-12-18T06:19:12.305574",
+        "type": "facial",
+        "photo": null
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "out",
+        "timestamp": "2023-12-18T06:19:43.408904",
+        "type": "facial",
+        "photo": null
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "in",
+        "timestamp": "2023-12-18T06:20:17.351862",
+        "type": "facial",
+        "photo": null
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "out",
+        "timestamp": "2023-12-18T06:31:36.861525",
+        "type": "facial",
+        "photo": null
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "in",
+        "timestamp": "2023-12-18T09:40:31.077103",
+        "type": "facial",
+        "photo": null
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "out",
+        "timestamp": "20231218 @ 15:45",
+        "type": "backdated",
+        "login_type": "facial"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "in",
+        "timestamp": "2023-12-18T09:55:13.011254",
+        "type": "facial",
+        "photo": null
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "out",
+        "timestamp": "2023-12-18T10:20:31.807947",
+        "type": "facial",
+        "photo": null
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "in",
+        "timestamp": "2023-12-18T10:24:45.457256",
+        "type": "facial",
+        "photo": null
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "out",
+        "timestamp": "2023-12-18T10:24:58.750948",
+        "type": "facial",
+        "photo": null
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "in",
+        "timestamp": "2023-12-18T10:25:29.357241",
+        "type": "facial",
+        "photo": null
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "out",
+        "timestamp": "2023-12-18T10:25:43.680911",
+        "type": "facial",
+        "photo": null
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "in",
+        "timestamp": "2023-12-18T10:26:06.772380",
+        "type": "facial",
+        "photo": null
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "out",
+        "timestamp": "20231218 @ 17:00",
+        "type": "backdated",
+        "login_type": "facial"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "in",
+        "timestamp": "2023-12-18T10:35:15.259143",
+        "type": "facial",
+        "photo": null
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "out",
+        "timestamp": "2023-12-18T10:37:49.798858",
+        "type": "facial",
+        "photo": null
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "in",
+        "timestamp": "2023-12-18T10:38:23.238542",
+        "type": "facial",
+        "photo": null
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "out",
+        "timestamp": "2023-12-18T10:46:47.409377",
+        "type": "facial",
+        "photo": null
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "in",
+        "timestamp": "2023-12-18T10:51:48.137430",
+        "type": "facial",
+        "photo": null
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "out",
+        "timestamp": "2023-12-18T10:55:43.199118",
+        "type": "facial",
+        "photo": null
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "in",
+        "timestamp": "2023-12-18T11:13:33.377458",
+        "type": "facial",
+        "photo": null
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "out",
+        "timestamp": "2023-12-18T11:17:04.365539",
+        "type": "manual",
+        "photo": null
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "in",
+        "timestamp": "2023-12-18T11:22:41.508345",
+        "type": "facialx",
+        "photo": null
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "out",
+        "timestamp": "20231218 @ 15:30",
+        "type": "backdated",
+        "login_type": "facial"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "in",
+        "timestamp": "20231218 @ 14:45",
+        "type": "backdated",
+        "login_type": "facial"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "out",
+        "timestamp": "2023-12-18T11:36:20.773066",
+        "type": "currentx",
+        "login_type": "facial"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "out",
+        "timestamp": "20231218 @ 15:45",
+        "type": "backdated",
+        "login_type": "facial"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "in",
+        "timestamp": "2023-12-18T11:37:09.642887",
+        "type": "current",
+        "login_type": "facial"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "in",
+        "timestamp": "20231218 @ 16:30",
+        "type": "backdated",
+        "login_type": "facial"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "out",
+        "timestamp": "2023-12-18T11:39:48.090879",
+        "type": "current",
+        "login_type": "facial"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "out",
+        "timestamp": "20231218 @ 15:30",
+        "type": "backdated",
+        "login_type": "facial"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "in",
+        "timestamp": "2023-12-18T11:40:29.284574",
+        "type": "currentx",
+        "login_type": "facial"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "in",
+        "timestamp": "20231218 @ 16:15",
+        "type": "backdated",
+        "login_type": "facial"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "out",
+        "timestamp": "2023-12-18T11:51:47.858737",
+        "type": "current",
+        "login_type": "facial"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "out",
+        "timestamp": "20231218 @ 17:00",
+        "type": "backdated",
+        "login_type": "facial"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "in",
+        "timestamp": "2023-12-18T11:52:38.726865",
+        "type": "current",
+        "login_type": "facial"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "in",
+        "timestamp": "20231218 @ 15:30",
+        "type": "backdated",
+        "login_type": "facial"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "out",
+        "timestamp": "2023-12-18T11:53:24.206816",
+        "type": "currentx",
+        "login_type": "facial"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "out",
+        "timestamp": "2023-12-18T18:15:00.000000",
+        "type": "backdated",
+        "login_type": "facial"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "in",
+        "timestamp": "2023-12-18T12:21:02.189154",
+        "type": "current",
+        "login_type": "facial"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "in",
+        "timestamp": "2023-12-18T16:30:00.000000",
+        "type": "backdated",
+        "login_type": "facial"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "out",
+        "timestamp": "2023-12-18T13:01:12.016747",
+        "type": "current",
+        "login_type": "facial"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "out",
+        "timestamp": "2023-12-18T16:30:00.000000",
+        "type": "backdated",
+        "login_type": "facial"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "in",
+        "timestamp": "2023-12-18T13:10:12.397771",
+        "type": "current",
+        "login_type": "facial"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "in",
+        "timestamp": "2023-12-18T16:45:00.000000",
+        "type": "backdated",
+        "login_type": "facial"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "out",
+        "timestamp": "2023-12-18T13:10:59.457067",
+        "type": "current",
+        "login_type": "facial"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "out",
+        "timestamp": "2023-12-18T17:45:00.000000",
+        "type": "backdated",
+        "login_type": "facial"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "in",
+        "timestamp": "2023-12-18T17:00:00.000000",
+        "type": "backdated",
+        "login_type": "facial"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "out",
+        "timestamp": "2023-12-18T18:45:00.000000",
+        "type": "backdated",
+        "login_type": "facial"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "in",
+        "timestamp": "2023-12-18T13:34:17.202010",
+        "type": "current",
+        "login_type": "facial"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "in",
+        "timestamp": "2023-12-18T17:45:00.000000",
+        "type": "backdated",
+        "login_type": "facial"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "out",
+        "timestamp": "2023-12-18T13:43:04.143917",
+        "type": "current",
+        "login_type": "facial"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "out",
+        "timestamp": "2023-12-18T20:45:00.000000",
+        "type": "backdated",
+        "login_type": "facial"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "in",
+        "timestamp": "2023-12-18T13:45:42.806883",
+        "type": "current",
+        "login_type": "facial"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "in",
+        "timestamp": "2023-12-18T18:15:00.000000",
+        "type": "backdated",
+        "login_type": "facial"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "out",
+        "timestamp": "2023-12-18T13:58:40.763126",
+        "type": "current",
+        "login_type": "facial"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "in",
+        "timestamp": "2023-12-18T17:45:00.000000",
+        "type": "backdated",
+        "login_type": "facial"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "out",
+        "timestamp": "2023-12-18T13:59:19.006419",
+        "type": "current",
+        "login_type": "facial"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "in",
+        "timestamp": "2023-12-18T19:00:00.000000",
+        "type": "backdated",
+        "login_type": "facial"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "out",
+        "timestamp": "2023-12-18T14:00:15.542332",
+        "type": "current",
+        "login_type": "facial"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "out",
+        "timestamp": "2023-12-18T17:30:00.000000",
+        "type": "backdated",
+        "login_type": "facial"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "in",
+        "timestamp": "2023-12-18T14:01:38.264715",
+        "type": "current",
+        "login_type": "facial"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "out",
+        "timestamp": "2023-12-18T14:02:26.086642",
+        "type": "facial",
+        "photo": null
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "in",
+        "timestamp": "2023-12-18T14:02:56.652936",
+        "type": "facial",
+        "photo": null
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "out",
+        "timestamp": "2023-12-18T18:15:00.000000",
+        "type": "backdated",
+        "login_type": "facial"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "in",
+        "timestamp": "2023-12-18T14:15:49.446524",
+        "type": "current",
+        "login_type": "facial"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "out",
+        "timestamp": "2023-12-18T23:45:00.000000",
+        "type": "backdated",
+        "login_type": "facial"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "in",
+        "timestamp": "2023-12-18T14:17:02.555078",
+        "type": "current",
+        "login_type": "facial"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "out",
+        "timestamp": "2023-12-18T15:45:00.000000",
+        "type": "backdated",
+        "login_type": "facial"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "in",
+        "timestamp": "2023-12-18T14:17:59.816689",
+        "type": "current",
+        "login_type": "facial"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "out",
+        "timestamp": "2023-12-18T20:30:00.000000",
+        "type": "backdated",
+        "login_type": "facial"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "in",
+        "timestamp": "2023-12-18T14:18:32.308353",
+        "type": "current",
+        "login_type": "facial"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "out",
+        "timestamp": "2023-12-18T21:00:00.000000",
+        "type": "backdated",
+        "login_type": "facial"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "in",
+        "timestamp": "2023-12-18T14:46:32.199923",
+        "type": "current",
+        "login_type": "facial"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "out",
+        "timestamp": "2023-12-18T21:30:00.000000",
+        "type": "backdated",
+        "login_type": "facial"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "in",
+        "timestamp": "2023-12-18T09:47:35.797428",
+        "type": "current",
+        "login_type": "facial"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "out",
+        "timestamp": "2023-12-18T19:00:00.000000",
+        "type": "backdated",
+        "login_type": "facial"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "in",
+        "timestamp": "2023-12-18T14:50:53.392791",
+        "type": "current",
+        "login_type": "facial"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "out",
+        "timestamp": "2023-12-18T21:30:00.000000",
+        "type": "backdated",
+        "login_type": "facial"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "in",
+        "timestamp": "2023-12-18T10:56:36.242671",
+        "type": "current",
+        "login_type": "facial"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "out",
+        "timestamp": "2023-12-18T14:00:00.000000",
+        "type": "backdated",
+        "login_type": "facial"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "in",
+        "timestamp": "2023-12-18T15:11:32.375854",
+        "type": "current",
+        "login_type": "facial"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "out",
+        "timestamp": "2023-12-18T20:45:00.000000",
+        "type": "backdated",
+        "login_type": "facial"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "in",
+        "timestamp": "2023-12-18T15:12:01.908725",
+        "type": "current",
+        "login_type": "facial"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "out",
+        "timestamp": "2023-12-18T17:30:00.000000",
+        "type": "backdated",
+        "login_type": "facial"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "in",
+        "timestamp": "2023-12-18T15:14:20.735039",
+        "type": "current",
+        "login_type": "facial"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "out",
+        "timestamp": "2023-12-16T16:15:00.000000",
+        "type": "backdated",
+        "login_type": "facial"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "in",
+        "timestamp": "2023-12-18T15:16:07.871584",
+        "type": "current",
+        "login_type": "facial"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "out",
+        "timestamp": "2023-12-16T19:30:00.000000",
+        "type": "backdated",
+        "login_type": "facial"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "in",
+        "timestamp": "2023-12-18T15:44:42.743742",
+        "type": "current",
+        "login_type": "facial"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "out",
+        "timestamp": "2023-12-18T15:45:00.000000",
+        "type": "backdated",
+        "login_type": "facial"
+    },
+    {
+        "employee": "Duane Cronje",
+        "status": "in",
+        "timestamp": "2023-12-18T15:45:25.551554",
+        "type": "current",
+        "login_type": "facial"
     }
 ]
